@@ -1,5 +1,11 @@
 module.exports = {
-  extends: 'erb',
+  extends: [
+    'erb',
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+  ],
   plugins: ['@typescript-eslint'],
   rules: {
     // A temporary hack related to IDE not resolving correct package.json
@@ -13,6 +19,7 @@ module.exports = {
     '@typescript-eslint/no-shadow': 'error',
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
+    'prettier/prettier': ['error', { endOfLine: 'auto' }],
   },
   parserOptions: {
     ecmaVersion: 2022,
